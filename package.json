@@ -45,9 +45,8 @@
       "dist-electron"
     ],
     "win": {
-      "target": [
-        "zip"
-      ]
+      "target": ["zip"],
+      "artifactName": "${productName}.win.${ext}"
     }
   },
   "main": "dist-electron/main.js"
