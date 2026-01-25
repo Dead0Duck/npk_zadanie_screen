@@ -2,7 +2,7 @@
   "name": "npk_zadanie_screen",
   "description": "Мини-приложение для показа текста заданий в колледже.\nТребуется второй монитор, ибо выводит именно на него.",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dead0Duck",
   "type": "module",
   "scripts": {
@@ -15,9 +15,12 @@
     "@tailwindcss/vite": "^4.1.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -45,7 +48,9 @@
       "dist-electron"
     ],
     "win": {
-      "target": ["zip"],
+      "target": [
+        "zip"
+      ],
       "artifactName": "${name}.win.${ext}"
     }
   },

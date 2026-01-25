@@ -19,6 +19,7 @@ process.env.APP_ROOT = path.join(__dirname, '..')
 export const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL']
 export const MAIN_DIST = path.join(process.env.APP_ROOT, 'dist-electron')
 export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist')
+export const IS_DEV = process.env.NODE_ENV === "development"
 
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST
 
@@ -42,7 +43,8 @@ function createWindow() {
     // mainWindow.loadFile('dist/index.html')
     mainWindow.loadFile(path.join(RENDERER_DIST, 'index.html'))
   }
-  mainWindow.webContents.openDevTools()
+  if (IS_DEV)
+    mainWindow.webContents.openDevTools()
 
   const displays = screen.getAllDisplays();
   const externalDisplay: Display | null = displays.find((display) => {
@@ -86,7 +88,13 @@ function createWindow() {
     // mainWindow.loadFile('dist/show.html')
     showWindow.loadFile(path.join(RENDERER_DIST, 'show.html'))
   }
-  showWindow.setIgnoreMouseEvents(true);
+  if (IS_DEV)
+    showWindow.webContents.openDevTools();
+  else
+    showWindow.setIgnoreMouseEvents(true);
+
+  ipcMain.removeAllListeners("zadUpd")
+  ipcMain.removeAllListeners("zadHide")
 
   ipcMain.on('zadUpd', (_event, site, text) => {
     showWindow?.webContents.send('zadUpd', site, text);
