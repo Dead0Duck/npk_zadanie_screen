@@ -4,18 +4,18 @@ function App() {
   const [site, setSite] = useState("https://npkdo.ru");
   const [text, setText] = useState("");
 
-  const sendZadanie = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     window.ipcRenderer.send("zadUpd", site, text);
   };
 
-  const hideZadanie = () => {
+  const handleHide = () => {
     window.ipcRenderer.send("zadHide");
   };
 
   return (
     <>
-      <form className="flex h-screen items-center justify-center" onSubmit={sendZadanie}>
+      <form className="flex h-screen items-center justify-center" onSubmit={handleSubmit}>
         <div className="mt-2 w-full mx-6 space-y-12">
 
           <h2 className="text-lg/1 font-semibold text-white">Показ задания</h2>
@@ -52,7 +52,7 @@ function App() {
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-            <button type="button" className="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-neutral-800 transition" onClick={hideZadanie}>Скрыть</button>
+            <button type="button" className="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-neutral-800 transition" onClick={handleHide}>Скрыть</button>
             <button type="submit" className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-semibold text-white outline-2 outline-offset-2 outline-transparent focus-visible:outline-cyan-600 hover:bg-cyan-700 transition">Показать</button>
           </div>
 
