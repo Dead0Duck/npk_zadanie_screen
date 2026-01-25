@@ -1,4 +1,4 @@
-import { app, screen, BrowserWindow, Display, ipcMain, dialog } from 'electron';
+import { app, screen, BrowserWindow, Display, ipcMain, dialog, nativeTheme } from 'electron';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -27,6 +27,8 @@ let mainWindow: BrowserWindow | null
 let showWindow: BrowserWindow | null
 
 function createWindow() {
+  nativeTheme.themeSource = "dark"
+
   mainWindow = new BrowserWindow({
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     title: "NPK Показ задания",
@@ -83,7 +85,7 @@ function createWindow() {
   });
 
   if (VITE_DEV_SERVER_URL) {
-    showWindow.loadURL(VITE_DEV_SERVER_URL + '/show.html')
+    showWindow.loadURL(path.join(VITE_DEV_SERVER_URL, 'show.html'))
   } else {
     // mainWindow.loadFile('dist/show.html')
     showWindow.loadFile(path.join(RENDERER_DIST, 'show.html'))
