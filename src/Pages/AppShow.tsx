@@ -26,24 +26,18 @@ function AppShow() {
   return (
     <>
       {visible && (
-        <div className="flex h-screen items-center justify-center m-0">
-          <div className="rounded-xl bg-black/70  p-3 min-w-[320px] max-w-95/100 overflow-clip text-wrap text-clip break-all whitespace-pre-line">
-            <h1 className="text-4xl/12 font-semibold text-white text-shadow-lg">Ваше задание на сегодня</h1>
-            <h2 className="text-3xl/14 text-cyan-400 text-shadow-lg prose prose-2xl prose-invert prose-a:text-cyan-400">
+        <div className="flex h-screen items-center justify-center m-0 overflow-hidden">
+          <div className="rounded-xl bg-black/70  p-3 min-w-[320px] max-w-95/100 overflow-clip text-wrap text-clip break-all">
+            <h1 className="text-6xl mb-4 font-semibold text-white text-shadow-lg">Ваше задание на сегодня</h1>
+            <h2 className="text-cyan-400 text-shadow-lg mb-4 prose prose-duckxl prose-invert prose-a:text-cyan-400">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{site}</ReactMarkdown>
             </h2>
             <article
-              className="text-white text-shadow-lg prose prose-lg prose-invert
+              className="text-white text-shadow-lg prose prose-duckxl prose-invert max-w-full
               prose-a:text-cyan-400
               prose-table:bg-neutral-900
               prose-th:border prose-th:border-gray-700 prose-th:py-3
-              prose-td:border prose-td:border-gray-700
-              prose-headings:my-0
-              prose-p:my-0
-              prose-table:my-0
-              prose-ul:my-0
-              prose-li:my-0
-              prose-img:my-0"
+              prose-td:border prose-td:border-gray-700"
             >
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
             </article>

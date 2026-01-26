@@ -51,11 +51,12 @@ function createWindow() {
   const displays = screen.getAllDisplays();
   const externalDisplay: Display | null = displays.find((display) => {
     return display.bounds.x !== 0 || display.bounds.y !== 0;
-  }) || null;
+  }) || IS_DEV && screen.getPrimaryDisplay() || null;
+
   if (!externalDisplay) {
-    mainWindow.close();
-    dialog.showErrorBox("Ошибка", "Не найден второй монитор")
-    return false;
+      mainWindow.close();
+      dialog.showErrorBox("Ошибка", "Не найден второй монитор")
+      return false;
   }
   const { x, y } = externalDisplay.bounds
   const { width, height } = externalDisplay.workAreaSize
@@ -66,11 +67,11 @@ function createWindow() {
     height: height,
     width: width,
     skipTaskbar: true,
-    transparent: true,
+    transparent: !IS_DEV,
     frame: false,
     resizable: false,
     alwaysOnTop: false,
-    focusable: false,
+    focusable: IS_DEV,
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
     }
