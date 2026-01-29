@@ -40,6 +40,12 @@
     "appId": "ru.dead0duck.npk_zadanie_screen",
     "asar": true,
     "productName": "NPK Показ задания",
+    "publish": {
+      "provider": "github",
+      "owner": "dead0duck",
+      "repo": "npk_zadanie_screen",
+      "releaseType": "release"
+    },
     "directories": {
       "output": "build/${version}"
     },

@@ -12,7 +12,6 @@ jobs:
     permissions:
       contents: write
 
-    # Platforms to build on/for
     strategy:
       matrix:
         os: [windows-latest]
@@ -32,6 +31,5 @@ jobs:
           github_token: ${{ secrets.github_token }}
           release: true
         env:
-          # macOS notarization API key
           API_KEY_ID: ${{ secrets.api_key_id }}
           API_KEY_ISSUER_ID: ${{ secrets.api_key_issuer_id }}
