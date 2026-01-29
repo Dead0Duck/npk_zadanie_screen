@@ -3,10 +3,11 @@ name: Build/release
 on:
   push:
     tags:
-    - '*'
+      - v*
 
 jobs:
   release:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ${{ matrix.os }}
     permissions:
       contents: write

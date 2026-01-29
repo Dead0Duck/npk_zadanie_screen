@@ -11,7 +11,7 @@ const customModifier = {
     css:
       {
         fontSize: rem(46),
-        lineHeight: round(40 / 46),
+        lineHeight: round(59 / 46),
         p: {
           marginTop: 0,
           marginBottom: 0,
