@@ -13,8 +13,8 @@ const customModifier = {
         fontSize: rem(46),
         lineHeight: round(59 / 46),
         p: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         '[class~="lead"]': {
           fontSize: em(40, 24),
@@ -23,55 +23,55 @@ const customModifier = {
           marginBottom: em(32, 40),
         },
         blockquote: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
           paddingInlineStart: em(40, 36),
         },
         h1: {
           fontSize: em(64, 24),
           marginTop: '0',
-          marginBottom: 0,
+          marginBottom: '0',
           lineHeight: round(64 / 64),
         },
         h2: {
           fontSize: em(48, 24),
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
           lineHeight: round(52 / 48),
         },
         h3: {
           fontSize: em(36, 24),
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
           lineHeight: round(44 / 36),
         },
         h4: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
           lineHeight: round(36 / 24),
         },
         img: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         picture: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         'picture > img': {
           marginTop: '0',
           marginBottom: '0',
         },
         video: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         kbd: {
           fontSize: em(20, 24),
           borderRadius: rem(6),
-          paddingTop: 0,
+          paddingTop: '0',
           paddingInlineEnd: em(8, 46),
-          paddingBottom: 0,
+          paddingBottom: '0',
           paddingInlineStart: em(8, 46),
         },
         code: {
@@ -86,8 +86,8 @@ const customModifier = {
         pre: {
           fontSize: em(20, 46),
           lineHeight: round(36 / 20),
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
           borderRadius: rem(8),
           paddingTop: em(24, 20),
           paddingInlineEnd: em(32, 20),
@@ -95,18 +95,24 @@ const customModifier = {
           paddingInlineStart: em(32, 20),
         },
         ol: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingInlineStart: em(38, 46),
+          marginTop: '0',
+          marginBottom: '0',
+          paddingInlineStart: em(100, 46),
         },
         ul: {
-          marginTop: 0,
-          marginBottom: 0,
-          paddingInlineStart: em(38, 46),
+          marginTop: '0',
+          marginBottom: '0',
+          paddingInlineStart: em(66, 46),
         },
         li: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
+        },
+        'ol > li ::marker': {
+          color: 'var(--color-white)',
+        },
+        'ul > li ::marker': {
+          color: 'var(--color-white)',
         },
         'ol > li': {
           paddingInlineStart: em(10, 46),
@@ -115,39 +121,39 @@ const customModifier = {
           paddingInlineStart: em(10, 46),
         },
         '> ul > li p': {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         '> ul > li > p:first-child': {
-          marginTop: 0,
+          marginTop: '0',
         },
         '> ul > li > p:last-child': {
-          marginBottom: 0,
+          marginBottom: '0',
         },
         '> ol > li > p:first-child': {
-          marginTop: 0,
+          marginTop: '0',
         },
         '> ol > li > p:last-child': {
-          marginBottom: 0,
+          marginBottom: '0',
         },
         'ul ul, ul ol, ol ul, ol ol': {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         dl: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         dt: {
-          marginTop: 0,
+          marginTop: '0',
         },
         dd: {
-          marginTop: 0,
+          marginTop: '0',
           paddingInlineStart: em(38, 46),
         },
         hr: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         'hr + *': {
           marginTop: '0',
@@ -189,8 +195,8 @@ const customModifier = {
           paddingInlineEnd: '0',
         },
         figure: {
-          marginTop: 0,
-          marginBottom: 0,
+          marginTop: '0',
+          marginBottom: '0',
         },
         'figure > *': {
           marginTop: '0',
@@ -199,7 +205,7 @@ const customModifier = {
         figcaption: {
           fontSize: em(20, 46),
           lineHeight: round(32 / 42),
-          marginTop: 0,
+          marginTop: '0',
         },
 
         code: {
