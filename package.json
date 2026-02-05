@@ -2,7 +2,7 @@
   "name": "npk_zadanie_screen",
   "description": "Мини-приложение для показа текста заданий в колледже.\nТребуется второй монитор, ибо выводит именно на него.",
   "private": true,
-  "version": "1.0.1c",
+  "version": "1.0.2",
   "author": "Dead0Duck",
   "type": "module",
   "scripts": {

@@ -230,4 +230,3 @@ module.exports = {
     },
   }
 };
-console.log(module.exports.theme.extend.typography)
